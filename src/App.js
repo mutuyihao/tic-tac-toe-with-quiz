@@ -71,7 +71,7 @@ export default function Game() {
 
   function onPlay(nextSquares, index) {
     const nextHistory = [...history.slice(0, currentMove + 1), nextSquares]
-    const nextHistoryIndex = historyIndex.length > 0 ? [...historyIndex, index] : [index]
+    const nextHistoryIndex = [...historyIndex.slice(0, currentMove + 1), index]
     setHistoryIndex(nextHistoryIndex)
 
     setHistory(nextHistory)
